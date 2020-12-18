@@ -142,7 +142,7 @@ func (m *MergeImage) ReadImageFile(path string) (image.Image, error) {
 	return img, nil
 }
 
-func (m *MergeImage) mergeGrids(images []image.Image) (*image.RGBA, error) {
+func (m *MergeImage) MergeGrids(images []image.Image) (*image.RGBA, error) {
 	var canvas *image.RGBA
 	imageBoundX := 0
 	imageBoundY := 0
@@ -211,5 +211,5 @@ func (m *MergeImage) Merge() (*image.RGBA, error) {
 		return nil, errors.New("There is no image to merge")
 	}
 
-	return m.mergeGrids(images)
+	return m.MergeGrids(images)
 }
